@@ -19,3 +19,16 @@ class Query(graphene.ObjectType):
         return "Hello, GraphQL!"
 
 schema = graphene.Schema(query=Query)
+
+
+import graphene
+from crm_module.schema import Query as CRMQuery  # adjust if your app is named differently
+
+class Query(CRMQuery, graphene.ObjectType):
+    # You can still add extra fields here if needed
+    hello = graphene.String(description="A simple hello world field")
+
+    def resolve_hello(root, info):
+        return "Hello, GraphQL!"
+
+schema = graphene.Schema(query=Query)
