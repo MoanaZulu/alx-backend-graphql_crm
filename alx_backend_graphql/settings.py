@@ -139,3 +139,7 @@ GRAPHENE = {
 
 
 
+INSTALLED_APPS = [
+    # existing apps...
+    "django_filters",
+]
