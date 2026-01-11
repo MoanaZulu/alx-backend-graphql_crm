@@ -43,3 +43,9 @@ class UpdateLowStockProducts(graphene.Mutation):
 
 class Mutation(graphene.ObjectType):
     update_low_stock_products = UpdateLowStockProducts.Field()
+
+
+
+import graphene
+from graphene_django.types import DjangoObjectType
+from crm.models import Product
